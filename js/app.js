@@ -79,8 +79,8 @@ function displayPosts(posts, name) {
 
     postsHTML += `
           <div class="post-card" data-index="${index}">
-              <h2 class="post-card--title">#${index + 1} ${title}</h2>
-              <p class="post-card--body">📄 ${body}</p>
+              <h2 class="post-card--title">${index + 1}. ${title}</h2>
+              <p class="post-card--body">${body}</p>
           </div>
       `;
   });

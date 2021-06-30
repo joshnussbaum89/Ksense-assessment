@@ -1,8 +1,18 @@
 /* Poppins Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* CSS variables */
+:root {
+  /* Colors */
+  --purple: rgba(52, 33, 146);
+  --purpleDark: rgb(19, 12, 54);
+  --purpleBackgroundLight: rgba(52, 33, 146, 0.2);
+  --gray: rgb(234, 234, 234);
+}
+
 /* Main Styles */
 body {
+  color: var(--purpleDark);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -11,19 +21,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem;
+  border-bottom: 1px solid var(--gray);
+  margin-bottom: 3rem;
+  padding: 0.5rem 1rem;
 }
 .nav-button {
-  background: rgb(230, 230, 230);
-  color: black;
-  padding: 1rem;
-  border-radius: 2rem;
   text-decoration: none;
+  background: var(--purple);
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
   transition: 0.2s;
 }
 .nav-button:hover {
-  background: black;
-  color: white;
+  background: var(--purpleDark);
 }
 
 /* Main users & posts container */
@@ -35,16 +46,25 @@ body {
 }
 .user-card,
 .post-card {
-  border: 1px dashed black;
+  background: var(--purpleBackgroundLight);
   padding: 1rem;
+  border-radius: 5px;
   transition: 0.2s;
   cursor: pointer;
 }
 .user-card:hover,
 .post-card:hover {
-  border: 1px dashed white;
-  background: black;
+  background: var(--purpleDark);
   color: white;
+}
+.post-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.post-card--title,
+.post-card--body::first-letter {
+  text-transform: capitalize;
 }
 
 /* Media Queries */
